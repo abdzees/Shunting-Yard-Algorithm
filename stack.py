@@ -19,14 +19,7 @@ class Stack:
         return self.stack.pop()
 
     def peek(self):
-        return self.stack[-1]
-
-# Create an instance of the Stack class
-stack = Stack()
-
-# Push items onto the stack
-stack.push(5)
-stack.push(10)
-
-# Peek at the top item of the stack
-print(stack.peek())  # Output: 10
+        if self.stack:
+            return self.stack[-1]
+        else:
+            return None
