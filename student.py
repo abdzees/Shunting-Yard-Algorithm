@@ -1,8 +1,8 @@
 def matriculation_number():
-    pass
+    number = "00147646"
 
 def first_name():
-    pass
+    firstName = "Abdullah"
 
 def last_name():
-    pass
+    lastName = "Zeeshan"
