@@ -16,6 +16,8 @@ class Stack:
         self.stack.append(item)
 
     def pop(self):
+        if not self.stack:
+            raise IndexError("pop from empty stack")
         return self.stack.pop()
 
     def peek(self):
