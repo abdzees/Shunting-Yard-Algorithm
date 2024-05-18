@@ -48,6 +48,37 @@ class ExpressionEvaluator:
             output.append(stack.pop())
 
         return ' '.join(output) # Returns the output list in the form of a string
+    
+    
 
     def evaluate(self, expression):
-        pass
+
+        stack = Stack()
+        characters = expression.split()
+
+        for character in characters:
+            if character.isnumeric(): # If the character is an operand
+                stack.push(int(character))
+            else: # If the character is an operator
+                firstOperand = stack.pop() 
+                secondOperand = stack.pop()
+
+                if character == "+":
+                    result = firstOperand + secondOperand
+                elif character == "-":
+                    result = firstOperand - secondOperand
+                elif character == "*":
+                    result = firstOperand * secondOperand
+                elif character == "/":
+                    if secondOperand != 0:
+                        result = firstOperand / secondOperand
+                    else:
+                        raise ZeroDivisionError("Division by Zero.")
+                    
+                stack.push(result)
+
+        return stack.pop() # Returns the final result
+    
+
+
+
